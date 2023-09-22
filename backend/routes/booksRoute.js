@@ -2,7 +2,7 @@ import express  from "express";
 import { Book } from "../model/bookModel.js";
 const router = express.Router();
 
-router.post('/', async(request,response)=>{
+router.post('https://book-store-55yc.onrender.com/', async(request,response)=>{
     try{
         if(
             !request.body.title ||
@@ -27,7 +27,7 @@ router.post('/', async(request,response)=>{
     }
 
 })
-router.get('/', async(request,response)=>{
+router.get('https://book-store-55yc.onrender.com//', async(request,response)=>{
     try{
         const books = await Book.find({});
         return response.status(200).json({
@@ -40,7 +40,7 @@ router.get('/', async(request,response)=>{
     }
 });
 
-router.get('/:id', async(request,response)=>{
+router.get('https://book-store-55yc.onrender.com//:id', async(request,response)=>{
     try{
         const {id} = request.params;
         
@@ -52,7 +52,7 @@ router.get('/:id', async(request,response)=>{
     }
 });
 
-router.put('/:id', async(request,response) => {
+router.put('https://book-store-55yc.onrender.com//:id', async(request,response) => {
     try{
         if(
             !request.body.title ||
@@ -77,7 +77,7 @@ router.put('/:id', async(request,response) => {
     }
 })
 
-router.delete('/:id',async(request,response)=>{
+router.delete('https://book-store-55yc.onrender.com//:id',async(request,response)=>{
     try {
         const {id} = request.params;
         const result = await Book.findByIdAndDelete(id);
